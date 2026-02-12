@@ -3,154 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video Editor</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Your Title</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
 </head>
 <body>
-    <div class="editor-container">
-        <!-- Top Navigation Bar -->
-        <nav class="top-nav">
-            <div class="nav-left">
-                <button class="back-btn">← Back</button>
-                <div class="project-info">
-                    <label class="project-label">Project</label>
-                    <input type="text" class="project-name" value="My Edited Video">
-                </div>
-            </div>
-            <div class="nav-center">
-                <span class="auto-save">All changes saved.</span>
-            </div>
-            <div class="nav-right">
-                <button class="create-video-btn">Create video</button>
-            </div>
-        </nav>
-
-        <!-- Main Editor Layout -->
-        <div class="editor-main">
-            <!-- Left Sidebar - Tools -->
-            <div class="left-sidebar">
-                <button class="tool-btn video-tool" title="Add Video">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                    </svg>
-                </button>
-                <button class="tool-btn audio-tool" title="Add Audio">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 3v9.28c-.47-.46-1.12-.75-1.84-.75-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-                    </svg>
-                </button>
-                <button class="tool-btn text-tool" title="Add Text">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M5 3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5z"/>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Center Content Area -->
-            <div class="center-content">
-                <!-- Video Preview -->
-                <div class="preview-section">
-                    <div class="video-preview">
-                        <div class="video-placeholder"></div>
-                    </div>
-
-                    <!-- Control Bar Under Preview -->
-                    <div class="control-bar">
-                        <button class="control-btn" title="Play">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </button>
-                        <button class="control-btn" title="Pause">
-                            <svg viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
-                        </button>
-                        <button class="control-btn" title="Stop">
-                            <svg viewBox="0 0 24 24"><path d="M8 8h8v8H8z"/></svg>
-                        </button>
-                        <button class="control-btn" title="Volume">
-                            <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
-                        </button>
-                        <button class="control-btn" title="Settings">
-                            <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.62l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.49.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.48.1.62l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.62l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.49-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.48-.1-.62l-2.03-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Timeline -->
-                <div class="timeline-section">
-                    <div class="timeline-header">
-                        <div class="timeline-label">Timeline</div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="drop-zone video-drop-zone">
-                            <svg class="drop-icon" viewBox="0 0 24 24">
-                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
-                            </svg>
-                            <span class="drop-text">Drag videos here</span>
-                        </div>
-                        <div class="drop-zone audio-drop-zone">
-                            <svg class="drop-icon" viewBox="0 0 24 24">
-                                <path d="M12 3v9.28c-.47-.46-1.12-.75-1.84-.75-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-                            </svg>
-                            <span class="drop-text">Drag audio here</span>
-                        </div>
-                    </div>
-                    <div class="timeline-footer">
-                        <button class="undo-btn">↶ Undo</button>
-                        <div class="zoom-controls">
-                            <label>Zoom</label>
-                            <input type="range" class="zoom-slider" min="10" max="200" value="100">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Sidebar - Creative Commons Library -->
-            <div class="right-sidebar">
-                <div class="search-box">
-                    <svg class="search-icon" viewBox="0 0 24 24">
-                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                    </svg>
-                    <input type="text" placeholder="Search Creative Commons videos" class="search-input">
-                </div>
-
-                <div class="library-content">
-                    <h3>Remixia Creative Commons videos</h3>
-                    <p>Search for Creative Commons licensed videos above or check out one of the example videos below. <a href="#">Learn more →</a></p>
-                    
-                    <div class="video-grid">
-                        <div class="video-item">
-                            <div class="video-thumb">
-                                <img src="https://via.placeholder.com/150x84?text=People" alt="People">
-                                <span class="video-duration">0:24</span>
-                            </div>
-                            <span class="video-title">People holding boxes</span>
-                        </div>
-                        <div class="video-item">
-                            <div class="video-thumb">
-                                <img src="https://via.placeholder.com/150x84?text=Water" alt="Water">
-                                <span class="video-duration">0:06</span>
-                            </div>
-                            <span class="video-title">Water flowing to</span>
-                        </div>
-                        <div class="video-item">
-                            <div class="video-thumb">
-                                <img src="https://via.placeholder.com/150x84?text=Tower" alt="Tower">
-                                <span class="video-duration">0:10</span>
-                            </div>
-                            <span class="video-title">Coit Tower</span>
-                        </div>
-                        <div class="video-item">
-                            <div class="video-thumb">
-                                <img src="https://via.placeholder.com/150x84?text=Birds" alt="Birds">
-                                <span class="video-duration">0:20</span>
-                            </div>
-                            <span class="video-title">Birds at a dock</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <svg>
+        <circle cx="50" cy="50" r="40" />
+    </svg>
+    <svg>
+        <rect x="10" y="10" width="30" height="30" />
+    </svg>
+    <!-- More HTML content -->
 </body>
 </html>
