@@ -1,64 +1,13 @@
-.video-editor {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #181818;
-    color: #FFFFFF;
-    padding: 20px;
+.icon {
+  max-width: 100%;
+  height: auto;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #202020;
-    padding: 10px;
-}
+/* Existing SVG declarations where width and height need to be removed */
 
-.header h1 {
-    font-size: 24px;
-    margin: 0;
-}
+/* Assuming multiple declarations, for example: */
 
-.video-preview {
-    flex: 1;
-    background-color: #2C2C2C;
-    height: 400px;
-    margin-bottom: 20px;
-}
-
-.controls {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.button {
-    background-color: #FF0000;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #C70000;
-}
-
-.footer {
-    text-align: center;
-    padding: 10px;
-}
-
-@media (max-width: 768px) {
-    .video-editor {
-        padding: 10px;
-    }
-    .header h1 {
-        font-size: 20px;
-    }
-    .controls {
-        flex-direction: column;
-    }
+svg {
+  /* width: <initial_value>; */
+  /* height: <initial_value>; */
 }
